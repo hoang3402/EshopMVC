@@ -1,0 +1,28 @@
+﻿@model Eshop.Models.Category
+
+@{
+    Layout = null;
+}
+<link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>@Html.EditorFor(model => model.Name)</td>
+            <td>@Html.ValidationMessageFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <td>NameVN</td>
+            <td>@Html.EditorFor(model => model.NameVN)</td>
+            <td>@Html.ValidationMessageFor(model => model.NameVN)</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Sửa" />
+            </td>
+        </tr>
+    </table>
+}
