@@ -16,13 +16,7 @@ namespace Eshop.Models
 
         public static List<Category> GetListCategory()
         {
-            return (database.Categories.ToList());
-        }
-
-        public static List<Category> GetCategory()
-        {
-            return (from temp in database.Categories
-                    select temp).ToList();
+            return database.Categories.ToList();
         }
 
         public static bool Insert(Category input)
