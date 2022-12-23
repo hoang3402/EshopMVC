@@ -1,0 +1,41 @@
+﻿@using Eshop.Models;
+@model Eshop.Models.Product
+
+@{
+    Layout = null;
+    List<Product> list = ViewBag.Products;
+}
+
+<!DOCTYPE html>
+
+<h1>Management Product</h1>
+@Html.ActionLink("Thêm", "Add","AdminProduct")
+<div>
+    <table width="100%" border="1" cellpadding="4" cellspacing="0">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>UnitPrice</td>
+            <td>Image</td>
+            <td>ProductDate</td>
+            <td>Available</td>
+            <td>CategoryId</td>
+            <td>Description</td>
+        </tr>
+        @foreach (var i in list)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.UnitPrice</td>
+                <td>@i.Image</td>
+                <td>@i.ProductDate</td>
+                <td>@i.Available</td>
+                <td>@i.CategoryId</td>
+                <td>@i.Description</td>
+                <td>@Html.ActionLink("Sửa", "Edit", "AdminCategory", new { id = i.Id }, null)</td>
+                <td>@Html.ActionLink("Xóa", "Delete", "AdminCategory", new { id = i.Id }, null)</td>
+            </tr>
+        }
+    </table>
+</div>

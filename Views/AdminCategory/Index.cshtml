@@ -1,9 +1,32 @@
-﻿@using Eshop.Models
-@model Eshop.Models.Category
+﻿@using Eshop.Models;
+@model Eshop.Models.Customer
+
+@Styles.Render("~/Content/Admin/Edit.css")
 
 @{
-    ViewBag.Title = "Index";
-    List<Category> a = ViewBag.a;
+    ViewBag.Title = "Halo";
+    Layout = null;
+    List<Category> categories = ViewBag.Categories;
 }
 
-<h2>Index</h2>
+<h1>Management Category</h1>
+@Html.ActionLink("Thêm", "Add", "AdminCategory")
+<div>
+    <table width="100%" border="1" cellpadding="4" cellspacing="0">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Name VN</td>
+        </tr>
+        @foreach (var i in categories)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.NameVN</td>
+                <td>@Html.ActionLink("Sửa", "Edit", "AdminCategory", new { id = i.Id }, null)</td>
+                <td>@Html.ActionLink("Xóa", "Delete", "AdminCategory", new { id = i.Id }, null)</td>
+            </tr>
+        }
+    </table>
+</div>

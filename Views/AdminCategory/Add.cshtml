@@ -1,0 +1,25 @@
+﻿@model Eshop.Models.Category
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<table>
+    <tr>
+        <td>Name</td>
+        <td>@Html.EditorFor(model => model.Name)</td>
+    </tr>
+    <tr>
+        <td>NameVN</td>
+        <td>@Html.EditorFor(model => model.NameVN)</td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="Thêm" />
+        </td>
+    </tr>
+</table>
+}
