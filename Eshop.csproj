@@ -225,6 +225,8 @@
     <Content Include="Views\AdminCategory\Add.cshtml" />
     <Content Include="Views\AdminCategory\Edit.cshtml" />
     <Content Include="Views\AdminProduct\Index.cshtml" />
+    <Content Include="Views\AdminProduct\Edit.cshtml" />
+    <Content Include="Views\AdminProduct\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

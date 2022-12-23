@@ -17,5 +17,10 @@ namespace MVC.Models
         {
             return database.Products.ToList();
         }
+
+        public static void Add(Product product)
+        {
+            database.Products.Add(product);
+        }
     }
 }
